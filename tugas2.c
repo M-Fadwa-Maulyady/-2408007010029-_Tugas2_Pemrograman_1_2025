@@ -6,16 +6,16 @@ void welcomeMessage() {
 }
 
 // 2. Argument Passed but No Return Value
-void printStudentID(int npm) {
-    int square = npm * npm;
-    printf("NPM Anda adalah: %d\n", npm);
-    printf("Kuadrat dari NPM Anda adalah: %d\n", square);
+void printStudentID(unsigned long long int npm) {
+    unsigned long long int square = npm * npm;
+    printf("NPM Anda adalah: %llu\n", npm);
+    printf("Kuadrat dari NPM Anda adalah: %llu\n", square);
+//jika angkanya terlalu banyak, maka akan terjadi error. karena unsigned long long int tidak sanggup menampungnya
 }
 
 // 3. No Argument Passed but Return Value
 int inputExamScore() {
     int score;
-    printf("Masukkan nilai ujian: ");
     scanf("%d", &score);
     return score;
 }
@@ -30,11 +30,13 @@ int main() {
     welcomeMessage();
 
     // Fungsi 2
-    int npm = 2408007010029; // Ganti dengan NPM Anda
+    unsigned long long int npm = 2408007010029; // Ubah ke NPM Anda
     printStudentID(npm);
 
     // Fungsi 3
+    printf("Masukkan nilai uts: ");
     int uts = inputExamScore();
+    printf("Masukkan nilai uas: ");
     int uas = inputExamScore();
 
     // Fungsi 4
